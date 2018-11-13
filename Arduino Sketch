@@ -1,0 +1,26 @@
+  #include <LiquidCrystal.h>
+LiquidCrystal lcd(6, 8, 9, 10, 11, 12);
+int pin = 6;
+#define ENABLE 5
+#define DIRA 3
+#define DIRB 4
+
+int i;
+ 
+void setup() {
+  lcd.begin(16, 2);
+  Serial.begin(9600);
+    lcd.setCursor(1,0);
+  lcd.print("Please Take One");
+digitalWrite(ENABLE,HIGH); // enable on
+digitalWrite(DIRA,HIGH); //open lid
+delay(10000);
+digitalWrite(DIRB, HIGH); //close lid
+   lcd.setCursor(1,0);
+   lcd.print("Visit GriffinC7");
+   lcd.setCursor(0,1);
+   lcd.print("On Instructables");
+}
+
+void loop() {
+}
